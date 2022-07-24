@@ -48,6 +48,29 @@ It uses one CPU at a time.|It uses Multiple CPU ar a time.|
 
 ## Installation and configuration of Snort
 
+We can install snort on ubuntu22.04LTS using following commands:
+
+***Step 1 update***
+
+```
+sudo apt update
+```
+*** Step 2 Install Snort***
+
+```
+sudo apt-get install snort -y
+```
+![Configuration image](/home/ironcross/Pictures/Screenshots)
+
+```
+Click Ok for the configuration
+```
+***Step 3 Go to the snort directory****
+
+```
+cd /etc/snort/
+```
+
 ## Installation and configuration of Suricata
 
 ## Experience of Snort
