@@ -110,6 +110,14 @@ Snort exiting
 cd /etc/snort/rules/
 ls -l
 ```
+```
+sudo nano local.rules
+```
+paste it
+
+```
+alert icmp any any -> $HOME_NET any (msg:"ICMP Test"; sid:1000001; rev:1;)
+```
 
 - FTP Connection Detection Rule
 - FTP Connection Failed Rule
