@@ -1,4 +1,4 @@
-# Intrusion Detection System
+# *Intrusion Detection System*
 
 ## Intruders
 - The most common threat to security is the attack by the intruder. Intruders are often referred to as hackers and are the most harmful factors contributing to the vulnerability of security. 
@@ -61,8 +61,6 @@ sudo apt update
 ```
 sudo apt-get install snort -y
 ```
-![Configuration image](/)
-
 ```
 Click Ok for the configuration
 ```
@@ -73,13 +71,13 @@ Click Ok for the configuration
 cd /etc/snort/
 ls -l
 ```
-***Step4 Backup of snort.conf file***
+***Step 4 Backup of snort.conf file***
 
 ```
 sudo cp snort.conf snort.conf.back
 ls -l
 ```
-***Step5 Create a another configuration file***
+***Step 5 Create a another configuration file***
 
 ```
 sudo cp snort.conf test1_snort.conf
@@ -91,18 +89,20 @@ ipvar HOME_NET <your ip address>
 ```
 Save the file using ctrl+S and CTRL+X 
 
-***Step6 now check file is configured or not***
+***Step 6 now check file is configured or not***
 
 ```
 sudo snort -T -i wlp2s0 -c /etc/snort/test1_snort.conf
 ```
+#### T - use for testing mode
+
 output
 
 ```
 Snort successfully validated the configuration!
 Snort exiting
 ```
-***Step7 set COnfiguration Rules***
+***Step 7 set COnfiguration Rules***
 
 - ICMP detection Rule
 
@@ -118,17 +118,24 @@ paste it
 ```
 alert icmp any any -> $HOME_NET any (msg:"ICMP Test"; sid:1000001; rev:1;)
 ```
+****Step 8 check rule is configured or not***
+
+```
+sudo snort -T -i wlp2s0 -c /etc/snort/test1_snort.conf
+sudo snort -A console -q -i wlp2s0 -c /etc/snort/test1_snort.conf
+```
+#### -A - it is used print output in the console.
+
+#### -q - it will shows only limited or related information not shows lot of imformation.
+
+#### -i - it is used for interfaces like- etn0, wlp2s0 etc.
+
+#### -c - it is used to open configuration file.
 
 - FTP Connection Detection Rule
 - FTP Connection Failed Rule
 
-
-
-## Installation and configuration of Suricata
-
 ## Experience of Snort
-
-## Experience of Suricata
 
 ## References
 
