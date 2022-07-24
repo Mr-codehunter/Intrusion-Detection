@@ -55,21 +55,66 @@ We can install snort on ubuntu22.04LTS using following commands:
 ```
 sudo apt update
 ```
-*** Step 2 Install Snort***
+
+***Step 2 Install Snort***
 
 ```
 sudo apt-get install snort -y
 ```
-![Configuration image](/home/ironcross/Pictures/Screenshots)
+![Configuration image](/)
 
 ```
 Click Ok for the configuration
 ```
-***Step 3 Go to the snort directory****
+
+***Step 3 Go to the snort directory***
 
 ```
 cd /etc/snort/
+ls -l
 ```
+***Step4 Backup of snort.conf file***
+
+```
+sudo cp snort.conf snort.conf.back
+ls -l
+```
+***Step5 Create a another configuration file***
+
+```
+sudo cp snort.conf test1_snort.conf
+ls -l
+```
+```
+ipvar HOME_NET any
+ipvar HOME_NET <your ip address>
+```
+Save the file using ctrl+S and CTRL+X 
+
+***Step6 now check file is configured or not***
+
+```
+sudo snort -T -i wlp2s0 -c /etc/snort/test1_snort.conf
+```
+output
+
+```
+Snort successfully validated the configuration!
+Snort exiting
+```
+***Step7 set COnfiguration Rules***
+
+- ICMP detection Rule
+
+```
+cd /etc/snort/rules/
+ls -l
+```
+
+- FTP Connection Detection Rule
+- FTP Connection Failed Rule
+
+
 
 ## Installation and configuration of Suricata
 
