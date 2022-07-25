@@ -135,8 +135,6 @@ sudo snort -A console -q -i wlp2s0 -c /etc/snort/test1_snort.conf
 - FTP Connection Detection Rule
 - FTP Connection Failed Rule
 
-## Experience of Snort
-
 ## References
 
 - https://www.geeksforgeeks.org/intruders-in-network-security/
